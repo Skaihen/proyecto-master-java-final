@@ -1,13 +1,13 @@
-package io.skaihen.proyectomasterjavafinal;
+package io.skaihen.apirest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProyectoMasterJavaFinalApplication {
+public class ApiRestApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProyectoMasterJavaFinalApplication.class, args);
+		SpringApplication.run(ApiRestApplication.class, args);
 	}
 
 }
