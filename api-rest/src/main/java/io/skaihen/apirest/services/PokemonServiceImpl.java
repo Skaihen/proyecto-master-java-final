@@ -24,9 +24,8 @@ public class PokemonServiceImpl implements PokemonService {
     }
 
     @Override
-    public List<Pokemon> subirPokemon(Pokemon pokemon) {
+    public void subirPokemon(Pokemon pokemon) {
         pokemonRepository.save(pokemon);
-        return pokemonRepository.findAll();
     }
 
     @Override
@@ -35,13 +34,17 @@ public class PokemonServiceImpl implements PokemonService {
     }
 
     @Override
-    public List<Pokemon> eliminarPokemon(int id) {
+    public void eliminarPokemon(int id) {
         pokemonRepository.deleteById(id);
-        return pokemonRepository.findAll();
     }
 
     @Override
-    public List<Pokemon> buscarPokemonHpMin(int hpMin) {
-        return pokemonRepository.findAllWithHpMin(hpMin);
+    public List<Pokemon> buscarPokemonSpeedMin(int speedMin) {
+        return pokemonRepository.findAllWithSpeedMin(speedMin);
+    }
+
+    @Override
+    public List<Pokemon> buscarPokemonHpEntreMinMax(int hpMin, int hpMax) {
+        return pokemonRepository.findAllBetweenHpMinAndHpMax(hpMin, hpMax);
     }
 }

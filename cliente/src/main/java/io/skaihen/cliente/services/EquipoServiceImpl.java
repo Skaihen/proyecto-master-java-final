@@ -1,4 +1,4 @@
-package io.skaihen.cliente.service;
+package io.skaihen.cliente.services;
 
 import java.util.Arrays;
 import java.util.List;

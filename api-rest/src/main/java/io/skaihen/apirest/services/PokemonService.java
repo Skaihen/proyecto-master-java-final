@@ -9,11 +9,13 @@ public interface PokemonService {
 
     Pokemon buscarPokemon(int id);
 
-    List<Pokemon> subirPokemon(Pokemon pokemon);
+    void subirPokemon(Pokemon pokemon);
 
     void actualizarPokemon(Pokemon pokemon);
 
-    List<Pokemon> eliminarPokemon(int id);
+    void eliminarPokemon(int id);
 
-    List<Pokemon> buscarPokemonHpMin(int hpMin);
+    List<Pokemon> buscarPokemonSpeedMin(int speedMin);
+
+    List<Pokemon> buscarPokemonHpEntreMinMax(int hpMin, int hpMax);
 }

@@ -3,20 +3,58 @@ package io.skaihen.apirest.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import io.skaihen.apirest.models.Pokemon;
 import io.skaihen.apirest.services.PokemonService;
 
-@Controller
+@RestController
+@RequestMapping("/pokemon")
 public class PokemonController {
 
     @Autowired
     PokemonService pokemonService;
 
-    @GetMapping("/pokemons")
+    @GetMapping(value = "/pokemons", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Pokemon> pokemons() {
         return pokemonService.pokemons();
+    }
+
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Pokemon buscarPokemon(@PathVariable("id") int id) {
+        return pokemonService.buscarPokemon(id);
+    }
+
+    @PostMapping(value = "/subir", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void subirPokemon(Pokemon pokemon) {
+        pokemonService.subirPokemon(pokemon);
+    }
+
+    @PutMapping(value = "/actualizar", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void actualizarPokemon(Pokemon pokemon) {
+        pokemonService.actualizarPokemon(pokemon);
+    }
+
+    @DeleteMapping(value = "/eliminar/{id}")
+    public void eliminarPokemon(@PathVariable("id") int id) {
+        pokemonService.eliminarPokemon(id);
+    }
+
+    @GetMapping(value = "/speedMin/{speedMin}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Pokemon> buscarPokemonSpeedMin(@PathVariable("speedMin") int speedMin) {
+        return pokemonService.buscarPokemonSpeedMin(speedMin);
+    }
+
+    @GetMapping(value = "/hpMin/{hpMin}/hpMax/{hpMax}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Pokemon> buscarPokemonHpEntreMinMax(@PathVariable("hpMin") int hpMin,
+            @PathVariable("hpMax") int hpMax) {
+        return pokemonService.buscarPokemonHpEntreMinMax(hpMin, hpMax);
     }
 }
