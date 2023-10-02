@@ -1,6 +1,8 @@
-package io.skaihen.apirest.pokemon;
+package io.skaihen.apirest.services;
 
 import java.util.List;
+
+import io.skaihen.apirest.models.Pokemon;
 
 public interface PokemonService {
     List<Pokemon> pokemons();
@@ -9,7 +11,7 @@ public interface PokemonService {
 
     List<Pokemon> subirPokemon(Pokemon pokemon);
 
-    List<Pokemon> actualizarPokemon(Pokemon pokemon);
+    void actualizarPokemon(Pokemon pokemon);
 
     List<Pokemon> eliminarPokemon(int id);
 

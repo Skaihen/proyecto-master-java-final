@@ -1,4 +1,4 @@
-package io.skaihen.apirest.pokemon;
+package io.skaihen.apirest.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
