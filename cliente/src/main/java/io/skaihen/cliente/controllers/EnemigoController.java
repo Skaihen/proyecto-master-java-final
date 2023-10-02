@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.skaihen.cliente.models.Enemigo;
@@ -31,12 +32,12 @@ public class EnemigoController {
     }
 
     @PostMapping(value = "/enemigo", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void nuevoEnemigo(Enemigo enemigo) {
+    public void nuevoEnemigo(@RequestBody Enemigo enemigo) {
         enemigoService.nuevoEnemigo(enemigo);
     }
 
     @PutMapping(value = "/enemigo", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void actualizarEnemigo(Enemigo enemigo) {
+    public void actualizarEnemigo(@RequestBody Enemigo enemigo) {
         enemigoService.actualizarEnemigo(enemigo);
     }
 

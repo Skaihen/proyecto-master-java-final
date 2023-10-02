@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.skaihen.apirest.models.Pokemon;
@@ -31,12 +32,12 @@ public class PokemonController {
     }
 
     @PostMapping(value = "/pokemon", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void nuevoPokemon(Pokemon pokemon) {
+    public void nuevoPokemon(@RequestBody Pokemon pokemon) {
         pokemonService.nuevoPokemon(pokemon);
     }
 
     @PutMapping(value = "/pokemon", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void actualizarPokemon(Pokemon pokemon) {
+    public void actualizarPokemon(@RequestBody Pokemon pokemon) {
         pokemonService.actualizarPokemon(pokemon);
     }
 
