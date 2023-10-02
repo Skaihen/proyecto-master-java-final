@@ -8,6 +8,17 @@
       "mainClass": "io.skaihen.apirest.ApiRestApplication",
       "projectName": "api-rest",
       "args": "",
+      "envFile": "${workspaceFolder}/.env",
+      "vmArgs": " -Dcom.sun.management.jmxremote"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-ClienteApplication<cliente>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "io.skaihen.cliente.ClienteApplication",
+      "projectName": "cliente",
+      "args": "",
       "envFile": "${workspaceFolder}/.env"
     }
   ]

@@ -9,7 +9,7 @@ public interface PokemonService {
 
     Pokemon buscarPokemon(int id);
 
-    void subirPokemon(Pokemon pokemon);
+    void nuevoPokemon(Pokemon pokemon);
 
     void actualizarPokemon(Pokemon pokemon);
 

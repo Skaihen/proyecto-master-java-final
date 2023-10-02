@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Equipo {
+public class Enemigo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;

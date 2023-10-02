@@ -24,7 +24,7 @@ public class PokemonServiceImpl implements PokemonService {
     }
 
     @Override
-    public void subirPokemon(Pokemon pokemon) {
+    public void nuevoPokemon(Pokemon pokemon) {
         pokemonRepository.save(pokemon);
     }
 
