@@ -53,6 +53,6 @@ public class EnemigoController {
     @GetMapping(value = "/hp/{hpMin}/{hpMax}", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Enemigo> buscarEnemigoHpEntreMinMax(@PathVariable("hpMin") int hpMin,
             @PathVariable("hpMax") int hpMax) {
-        return enemigoService.buscarEnemigoHpEntreMinMax(hpMin, hpMax);
+        return enemigoService.buscarEnemigoEntreHpMinMax(hpMin, hpMax);
     }
 }

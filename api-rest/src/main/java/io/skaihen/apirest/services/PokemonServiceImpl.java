@@ -44,7 +44,7 @@ public class PokemonServiceImpl implements PokemonService {
     }
 
     @Override
-    public List<Pokemon> buscarPokemonHpEntreMinMax(int hpMin, int hpMax) {
-        return pokemonRepository.findAllBetweenHpMinAndHpMax(hpMin, hpMax);
+    public List<Pokemon> buscarPokemonEntreHpMinMax(int hpMin, int hpMax) {
+        return pokemonRepository.findAllBetweenHpMinMax(hpMin, hpMax);
     }
 }

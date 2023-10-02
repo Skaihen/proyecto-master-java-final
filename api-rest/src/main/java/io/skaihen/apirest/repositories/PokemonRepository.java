@@ -14,5 +14,5 @@ public interface PokemonRepository extends JpaRepository<Pokemon, Integer> {
     List<Pokemon> findAllWithSpeedMin(int speedMin);
 
     @Query("SELECT p FROM Pokemon p WHERE p.hp BETWEEN :hpMin AND :hpMax")
-    List<Pokemon> findAllBetweenHpMinAndHpMax(int hpMin, int hpMax);
+    List<Pokemon> findAllBetweenHpMinMax(int hpMin, int hpMax);
 }

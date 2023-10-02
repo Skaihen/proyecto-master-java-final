@@ -17,5 +17,5 @@ public interface PokemonService {
 
     List<Pokemon> buscarPokemonSpeedMin(int speedMin);
 
-    List<Pokemon> buscarPokemonHpEntreMinMax(int hpMin, int hpMax);
+    List<Pokemon> buscarPokemonEntreHpMinMax(int hpMin, int hpMax);
 }
