@@ -47,7 +47,7 @@ public class EnemigoServiceImpl implements EnemigoService {
     }
 
     @Override
-    public List<Enemigo> buscarEnemigoHpEntreMinMax(int hpMin, int hpMax) {
+    public List<Enemigo> buscarEnemigoEntreHpMinMax(int hpMin, int hpMax) {
         return Arrays.asList(template.getForObject(url + "hp/" + hpMin + "/" + hpMax, Enemigo[].class));
     }
 }

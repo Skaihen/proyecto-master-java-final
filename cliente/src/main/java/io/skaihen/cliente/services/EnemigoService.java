@@ -17,5 +17,5 @@ public interface EnemigoService {
 
     List<Enemigo> buscarEnemigoSpeedMin(int speedMin);
 
-    List<Enemigo> buscarEnemigoHpEntreMinMax(int hpMin, int hpMax);
+    List<Enemigo> buscarEnemigoEntreHpMinMax(int hpMin, int hpMax);
 }
