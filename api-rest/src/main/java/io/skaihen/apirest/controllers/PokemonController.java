@@ -51,7 +51,7 @@ public class PokemonController {
     }
 
     @GetMapping(value = "/hp/{hpMin}/{hpMax}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Pokemon> buscarPokemonHpEntreMinMax(@PathVariable("hpMin") int hpMin,
+    public List<Pokemon> buscarPokemonEntreHpMinMax(@PathVariable("hpMin") int hpMin,
             @PathVariable("hpMax") int hpMax) {
         return pokemonService.buscarPokemonEntreHpMinMax(hpMin, hpMax);
     }
