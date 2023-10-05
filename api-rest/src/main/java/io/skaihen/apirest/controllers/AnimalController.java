@@ -3,7 +3,6 @@ package io.skaihen.apirest.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,7 +25,7 @@ public class AnimalController {
      *
      * @return El método devuelve una lista de objetos animales.
      */
-    @GetMapping(value = "/animales", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/animales", produces = "application/json")
     public List<Animal> animales() {
         return animalService.animales();
     }
@@ -39,7 +38,7 @@ public class AnimalController {
      *           se busca.
      * @return El método devuelve un objeto de tipo Animal.
      */
-    @GetMapping(value = "/animal/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/animal/{id}", produces = "application/json")
     public Animal buscarAnimal(@PathVariable int id) {
         return animalService.buscarAnimal(id);
     }
@@ -55,7 +54,7 @@ public class AnimalController {
      *               solicitud.
      * @return El método devuelve una lista de objetos animales.
      */
-    @PostMapping(value = "/animal", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/animal", consumes = "application/json")
     public List<Animal> nuevoAnimal(@RequestBody Animal animal) {
         animalService.nuevoAnimal(animal);
         return animalService.animales();
@@ -71,7 +70,7 @@ public class AnimalController {
      *               la solicitud, que se espera que esté
      *               en formato JSON.
      */
-    @PutMapping(value = "/animal", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "/animal", consumes = "application/json")
     public void actualizarAnimal(@RequestBody Animal animal) {
         animalService.actualizarAnimal(animal);
     }
@@ -86,7 +85,7 @@ public class AnimalController {
      *           debe eliminarse.
      * @return El método devuelve una lista de objetos animales.
      */
-    @DeleteMapping(value = "/animal/{id}")
+    @DeleteMapping(value = "/animal/{id}", produces = "application/json")
     public List<Animal> eliminarAnimal(@PathVariable int id) {
         animalService.eliminarAnimal(id);
         return animalService.animales();
@@ -101,7 +100,7 @@ public class AnimalController {
      *                 animal.
      * @return El método devuelve una lista de objetos animales.
      */
-    @GetMapping(value = "/speed/{speedMin}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/speed/{speedMin}", produces = "application/json")
     public List<Animal> buscarAnimalSpeedMin(@PathVariable int speedMin) {
         return animalService.buscarAnimalSpeedMin(speedMin);
     }
@@ -115,7 +114,7 @@ public class AnimalController {
      * @param hpMax El valor máximo para los "hp" (puntos de vida) de un animal.
      * @return El método devuelve una lista de objetos animales.
      */
-    @GetMapping(value = "/hp/{hpMin}/{hpMax}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/hp/{hpMin}/{hpMax}", produces = "application/json")
     public List<Animal> buscarAnimalEntreHpMinMax(@PathVariable int hpMin,
             @PathVariable int hpMax) {
         return animalService.buscarAnimalEntreHpMinMax(hpMin, hpMax);

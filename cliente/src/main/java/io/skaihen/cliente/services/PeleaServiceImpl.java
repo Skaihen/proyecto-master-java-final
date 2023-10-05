@@ -1,5 +1,7 @@
 package io.skaihen.cliente.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -17,6 +19,11 @@ public class PeleaServiceImpl implements PeleaService {
     PeleaRepository peleaRepository;
 
     private String url = "http://localhost:8080/";
+
+    @Override
+    public List<Pelea> peleas() {
+        return peleaRepository.findAll();
+    }
 
     @Override
     public Pelea nuevaPelea(int idAliado, int idEnemigo) {
