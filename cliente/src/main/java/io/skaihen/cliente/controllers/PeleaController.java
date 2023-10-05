@@ -12,32 +12,32 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.skaihen.cliente.models.Enemigo;
-import io.skaihen.cliente.services.EnemigoService;
+import io.skaihen.cliente.models.Pelea;
+import io.skaihen.cliente.services.PeleaService;
 
 @RestController
-public class EnemigoController {
+public class PeleaController {
 
     @Autowired
-    EnemigoService enemigoService;
+    PeleaService enemigoService;
 
     @GetMapping(value = "/enemigos", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Enemigo> enemigos() {
+    public List<Pelea> enemigos() {
         return enemigoService.enemigos();
     }
 
     @GetMapping(value = "/enemigo/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Enemigo buscarEnemigo(@PathVariable("id") int id) {
+    public Pelea buscarEnemigo(@PathVariable("id") int id) {
         return enemigoService.buscarEnemigo(id);
     }
 
     @PostMapping(value = "/enemigo", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void nuevoEnemigo(@RequestBody Enemigo enemigo) {
+    public void nuevoEnemigo(@RequestBody Pelea enemigo) {
         enemigoService.nuevoEnemigo(enemigo);
     }
 
     @PutMapping(value = "/enemigo", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void actualizarEnemigo(@RequestBody Enemigo enemigo) {
+    public void actualizarEnemigo(@RequestBody Pelea enemigo) {
         enemigoService.actualizarEnemigo(enemigo);
     }
 
@@ -47,12 +47,12 @@ public class EnemigoController {
     }
 
     @GetMapping(value = "/speed/{speedMin}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Enemigo> buscarEnemigoSpeedMin(@PathVariable("speedMin") int speedMin) {
+    public List<Pelea> buscarEnemigoSpeedMin(@PathVariable("speedMin") int speedMin) {
         return enemigoService.buscarEnemigoSpeedMin(speedMin);
     }
 
     @GetMapping(value = "/hp/{hpMin}/{hpMax}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Enemigo> buscarEnemigoEntreHpMinMax(@PathVariable("hpMin") int hpMin,
+    public List<Pelea> buscarEnemigoEntreHpMinMax(@PathVariable("hpMin") int hpMin,
             @PathVariable("hpMax") int hpMax) {
         return enemigoService.buscarEnemigoEntreHpMinMax(hpMin, hpMax);
     }

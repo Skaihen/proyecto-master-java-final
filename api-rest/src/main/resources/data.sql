@@ -1,20 +1,18 @@
-DROP TABLE IF EXISTS pokemons;
+DROP TABLE IF EXISTS animales;
 
-CREATE TABLE pokemons (
+CREATE TABLE animales (
 	id INT NOT NULL,
 	name VARCHAR(50) NOT NULL DEFAULT 'NA',
-	type1 VARCHAR(50),
-	type2 VARCHAR(50),
-	level INT,
-	hp INT,
-	attack INT,
+	intelligence INT,
+	power INT,
 	defense INT,
-	special_attack INT,
-	special_defense INT,
 	speed INT,
-	PRIMARY KEY (id));
+	hp INT,
+	stealth INT,
+	PRIMARY KEY (id)
+);
 
-INSERT INTO Pokemons (id, name, type1, type2, level, hp, attack, defense, special_attack, special_defense, speed) VALUES (1, 'Bulbasaur', 'planta', 'veneno', 1, 45, 49, 49, 65, 65, 45);
-INSERT INTO Pokemons (id, name, type1, type2, level, hp, attack, defense, special_attack, special_defense, speed) VALUES (4, 'Charmander', 'fuego', NULL, 1, 39, 52, 43, 60, 50, 65);
-INSERT INTO Pokemons (id, name, type1, type2, level, hp, attack, defense, special_attack, special_defense, speed) VALUES (7, 'Squirtle', 'agua', NULL, 1, 44, 48, 65, 50, 64, 43);
-INSERT INTO Pokemons (id, name, type1, type2, level, hp, attack, defense, special_attack, special_defense, speed) VALUES (25, 'Pikachu', 'electrico', NULL, 1, 35, 55, 40, 50, 50, 90);
+INSERT INTO Animales (id, name, intelligence, power, defense, speed, hp, stealth) VALUES (1, 'Hipopótamo', 60, 80, 78, 70, 85, 60);
+INSERT INTO Animales (id, name, intelligence, power, defense, speed, hp, stealth) VALUES (2, 'Elefante', 86, 88, 80, 40, 88, 42);
+INSERT INTO Animales (id, name, intelligence, power, defense, speed, hp, stealth) VALUES (3, 'Cocodrilo', 68, 100, 42, 50, 60, 80);
+INSERT INTO Animales (id, name, intelligence, power, defense, speed, hp, stealth) VALUES (4, 'Ratón', 80, 15, 20, 60, 20, 64);

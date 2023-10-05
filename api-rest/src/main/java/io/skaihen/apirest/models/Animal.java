@@ -11,18 +11,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "pokemons")
-public class Pokemon {
+@Table(name = "animales")
+public class Animal {
     @Id
     private int id;
     private String name;
-    private String type1;
-    private String type2;
-    private int level;
-    private int hp;
-    private int attack;
+    private int intelligence;
+    private int power;
     private int defense;
-    private int specialAttack;
-    private int specialDefense;
     private int speed;
+    private int hp;
+    private int stealth;
 }
