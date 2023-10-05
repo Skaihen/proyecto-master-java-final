@@ -30,6 +30,23 @@ public class PeleaServiceImpl implements PeleaService {
         AnimalAux aliado = template.getForObject(url + "animal/" + idAliado, AnimalAux.class);
         AnimalAux enemigo = template.getForObject(url + "animal/" + idEnemigo, AnimalAux.class);
 
-        return new Pelea(0, aliado, enemigo, "empate");
+        if (aliado == null || enemigo == null) {
+            throw new NullPointerException("El animal no existe");
+        }
+
+        String resultado = "empate";
+
+        if (aliado.calculateTotalStats() > enemigo.calculateTotalStats()) {
+            resultado = "victoria";
+        }
+        if (enemigo.calculateTotalStats() > aliado.calculateTotalStats()) {
+            resultado = "derrota";
+        }
+
+        Pelea pelea = new Pelea(0, aliado, enemigo, resultado);
+
+        peleaRepository.save(pelea);
+
+        return pelea;
     }
 }

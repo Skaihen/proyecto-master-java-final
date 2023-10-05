@@ -22,7 +22,7 @@ public class PeleaController {
         return peleaService.peleas();
     }
 
-    @PostMapping(value = "/pelea/{idAliado}/{idEnemigo}", consumes = "application/json")
+    @PostMapping(value = "/pelea/{idAliado}/{idEnemigo}")
     public Pelea nuevaPelea(@PathVariable int idAliado, @PathVariable int idEnemigo) {
         return peleaService.nuevaPelea(idAliado, idEnemigo);
     }
