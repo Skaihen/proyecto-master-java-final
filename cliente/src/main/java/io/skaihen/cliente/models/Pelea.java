@@ -1,5 +1,6 @@
 package io.skaihen.cliente.models;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,11 +22,11 @@ public class Pelea {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "aliado", referencedColumnName = "id")
     private AnimalAux aliado;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "enemigo", referencedColumnName = "id")
     private AnimalAux enemigo;
 
