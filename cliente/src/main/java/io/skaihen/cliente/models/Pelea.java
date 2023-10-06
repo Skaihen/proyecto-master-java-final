@@ -1,9 +1,12 @@
 package io.skaihen.cliente.models;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -20,8 +23,15 @@ public class Pelea {
     @SequenceGenerator(initialValue = 1, name = "pelea_seq", sequenceName = "pelea_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pelea_seq")
     private int id;
-    private int idAliado;
-    private int idEnemigo;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "aliado", referencedColumnName = "id")
+    private AnimalAux aliado;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "enemigo", referencedColumnName = "id")
+    private AnimalAux enemigo;
+
     private String resultado;
 
     public String obtenerIdGanador() {
@@ -29,7 +39,7 @@ public class Pelea {
         if (resultado.equals("empate"))
             return resultado;
 
-        return resultado.equals("victoria") ? String.valueOf(idAliado)
-                : String.valueOf(idEnemigo);
+        return resultado.equals("victoria") ? String.valueOf(aliado.getId())
+                : String.valueOf(enemigo.getId());
     }
 }
