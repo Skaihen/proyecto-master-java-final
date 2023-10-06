@@ -17,8 +17,8 @@ import lombok.NoArgsConstructor;
 @Table(name = "animales_aux")
 public class AnimalAux {
     @Id
-    @SequenceGenerator(initialValue = 1, name = "pelea_seq", sequenceName = "pelea_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pelea_seq")
+    @SequenceGenerator(initialValue = 1, name = "animal_aux_seq", sequenceName = "animal_aux_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "animal_aux_seq")
     private int id;
     private String name;
     private int intelligence;
