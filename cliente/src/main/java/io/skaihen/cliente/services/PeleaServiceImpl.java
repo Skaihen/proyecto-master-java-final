@@ -68,13 +68,16 @@ public class PeleaServiceImpl implements PeleaService {
             throw new NullPointerException("El animal no existe");
         }
 
+        aliado.setId(0);
+        enemigo.setId(0);
+
         String resultado = aliado.calculateTotalStats() > enemigo.calculateTotalStats() ? "victoria" : "derrota";
 
         if (aliado.calculateTotalStats() == enemigo.calculateTotalStats()) {
             resultado = "empate";
         }
 
-        Pelea pelea = new Pelea(0, idAliado, idEnemigo, resultado);
+        Pelea pelea = new Pelea(0, aliado, enemigo, resultado);
 
         peleaRepository.save(pelea);
 
