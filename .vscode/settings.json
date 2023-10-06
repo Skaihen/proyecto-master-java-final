@@ -3,5 +3,6 @@
   "docwriter.hotkey.windows": "Alt + .",
   "docwriter.progress.trackClasses": false,
   "docwriter.progress.trackTypes": false,
-  "docwriter.language": "Spanish"
+  "docwriter.language": "Spanish",
+  "maven.view": "flat"
 }
